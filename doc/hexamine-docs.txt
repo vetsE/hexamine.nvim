@@ -1,0 +1,6 @@
+hexamine.txt*     For Neovim >= 0.8.0     Last change: 2023 November 08
+
+==============================================================================
+Table of Contents                         *my-template-docs-table-of-contents*
+
+TODO
