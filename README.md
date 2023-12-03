@@ -26,9 +26,8 @@ With Lazy, use:
 
 ## Configuration
 
-Hexamine has a few configuration keys you can use. 
-
-The default configuration is:
+Hexamine has a few configuration keys you can use. The default configuration given below contains
+them all:
 
 ```lua
 config = {
@@ -49,11 +48,11 @@ config = {
 
 ## Commands
 
-The plugin provides the following Neovim commands for ease of use:
+The plugin provides the following Neovim commands.
 
 ### `:Hexamine`
 
-This command opens a floating window at the cursor position:
+This command opens a floating window at the cursor position.
 
 ### `:HexamineClose`
 
