@@ -1,27 +1,22 @@
--- main module file
-local module = require("hexamine.module")
+local hexamine = require("hexamine.module")
 
----@class Config
----@field opt string Your config option
-local config = {
-  opt = "Hello!",
-}
-
----@class MyModule
 local M = {}
 
----@type Config
-M.config = config
+M.config = {
+    keymap = {
+        close = "<Esc>", -- Default key for closing the floating window
+    },
+    highlights = { "Normal", "Search" },
+    -- extra_types = {},
+}
 
----@param args Config?
--- you can define your setup function here. Usually configurations can be merged, accepting outside params and
--- you can also put some validation here for those.
 M.setup = function(args)
-  M.config = vim.tbl_deep_extend("force", M.config, args or {})
-end
+    M.config = vim.tbl_deep_extend("force", M.config, args or {})
 
-M.hello = function()
-  module.my_first_function()
+    vim.api.nvim_create_user_command("Hexamine", function()
+        hexamine.hexamine_cursor(M.config)
+    end, {})
+    vim.api.nvim_create_user_command("HexamineClose", hexamine.close_float_and_reset, {})
 end
 
 return M

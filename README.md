@@ -1,3 +1,5 @@
 # 🧐 hexamine.nvim
 
-WIP
+## Demo
+
+![](./hexamine.gif)
